@@ -30,8 +30,8 @@ def resize_images(images_dir, image_save_dir, image_size):
 
 
 def _main():
-    images_dir = 'VOCdevkit/VOC2007/JPEGImages/'  # 適宜変更
-    image_save_dir = 'resize_images/'  # 適宜変更
+    images_dir = 'image/'  # 適宜変更
+    image_save_dir = 'resize_image/'  # 適宜変更
     image_size = 320 # 適宜変更
 
     resize_images(images_dir=images_dir, image_save_dir=image_save_dir, image_size=image_size)
