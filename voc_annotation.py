@@ -1,10 +1,15 @@
 import xml.etree.ElementTree as ET
 from os import getcwd
-
+import sys,os
 sets=[('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
 classes = ["item"]
 
+if len(sys.argv) > 1:
+    classes = sys.argv[1:]
+
+with open('model_data/voc_classes.txt','w') as f:
+    f.write('\n'.join(classes))
 
 def convert_annotation(year, image_id, list_file):
     in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id.replace(".jpg","")))
