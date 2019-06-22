@@ -30,9 +30,11 @@ def resize_images(images_dir, image_save_dir, image_size):
 
 
 def _main():
-    images_dir = 'image/'  # 適宜変更
-    image_save_dir = 'resize_image/'  # 適宜変更
-    image_size = 320 # 適宜変更
+    images_dir = 'image/'  # input directory
+    image_save_dir = 'resize_image/'  # output directory
+    image_size = 320
+    if len(sys.argv) > 1:
+        input_shape = (int(sys.argv[1]),int(sys.argv[1]))
 
     resize_images(images_dir=images_dir, image_save_dir=image_save_dir, image_size=image_size)
 
