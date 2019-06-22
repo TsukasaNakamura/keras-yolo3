@@ -7,14 +7,14 @@ print(pwd)
 
 
 def make_train_files():
-    sufixs = ['_train','_val','_test']
+    suffixs = ['_train','_val','_test']
 
-    for sufix in sufixs:
-        print('sufix',sufix)
-        new_file = open('{}.txt'.format(sufix.replace('_','')),'w')
+    for suffix in suffixs:
+        print('suffix',suffix)
+        new_file = open('{}.txt'.format(suffix.replace('_','')),'w')
         text = ""
         for file in os.listdir():
-            if file.find(sufix) == -1:continue
+            if file.find(suffix) == -1:continue
             with open(file) as f:
                 if text == "":text = f.read()
                 text =text +'\n'+ f.read()
