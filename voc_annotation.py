@@ -13,7 +13,7 @@ with open('model_data/voc_classes.txt','w') as f:
 
 
 def convert_annotation(year, image_id, list_file):
-    in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id.replace(".jpg","")))
+    in_file = open('VOCDevkit/VOC%s/Annotations/%s.xml'%(year, image_id.replace(".jpg","")))
     tree=ET.parse(in_file)
     root = tree.getroot()
 
