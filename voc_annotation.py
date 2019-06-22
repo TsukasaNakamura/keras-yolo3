@@ -11,6 +11,7 @@ if len(sys.argv) > 1:
 with open('model_data/voc_classes.txt','w') as f:
     f.write('\n'.join(classes))
 
+
 def convert_annotation(year, image_id, list_file):
     in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id.replace(".jpg","")))
     tree=ET.parse(in_file)
