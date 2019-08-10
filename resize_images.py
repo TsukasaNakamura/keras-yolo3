@@ -14,20 +14,14 @@ def resize_images(images_dir, image_save_dir, image_size):
     for img_path in image_paths:
         image = Image.open(img_path)
         image = image.convert('RGB')
+        image.thumbnail([image_size,image_size])
         back_ground = Image.new("RGB", (image_size,image_size), color=(255,255,255))
-
-        if image.size[0] > image.size[1]:
-            rate = image_size / image.size[0]
-            height = int(image.size[1] * rate)
-            resize_image = image.resize((image_size, height))
-        else:
-            rate = image_size / image.size[1]
-            width = int(image.size[0] * rate)
-            resize_image = image.resize(( width,image_size),Image.ANTIALIAS)
-        back_ground.paste(resize_image)
-
+        back_ground.paste(image)
         save_path = os.path.join(image_save_dir, os.path.basename(img_path))
-        back_ground.save(save_path)
+        end_index = save_path.rfind('.')
+        save_path = save_path[0:end_index]+'.jpg'
+        print('save',save_path)
+        back_ground.save(save_path,'JPEG')
 
 
 def _main():
