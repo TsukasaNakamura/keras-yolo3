@@ -32,6 +32,6 @@ def split_val_test(rate:float):
     print('test.txt',len(val) - split)
 
 if __name__ == '__main__':
-    val_rate = 0.66
+    val_rate = 0.33
     make_train_files()
     split_val_test(val_rate)
