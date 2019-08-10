@@ -7,6 +7,11 @@
 A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
 
 
+## Blog
+
+日本語での解説はこちらの記事をご確認ください。
+[【物体検出】keras−yolo3の学習方法](https://sleepless-se.net/2019/06/21/how-to-train-keras%e2%88%92yolo3/)
+
 ---
 
 ## Quick Start
