@@ -75,3 +75,10 @@ if __name__ == '__main__':
         detect_video(YOLO(**vars(FLAGS)), FLAGS.input, FLAGS.output)
     else:
         print("Must specify at least video_input_path.  See usage with --help.")
+        
+        
+    import cv2
+    images = []
+    for result in results:
+        images = result['image']
+   cv2.imwrite("out.jpg", np.asarray(images)[..., ::-1])     
